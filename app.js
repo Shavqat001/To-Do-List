@@ -1,51 +1,72 @@
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
+let form = document.querySelector('form'),
+   list = document.querySelector('ul'),
+   field = document.querySelector('.text-field'),
+   addBtn = document.querySelector('.add-btn');
 
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
-}
+window.addEventListener('load', () => {
+   field.focus();
+});
 
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
+form.addEventListener('submit', function add(evt) {
+   evt.preventDefault();
+   if (field.value) {
+      field.style.outlineColor = '#111';
+      let item = document.createElement('li');
+      item.textContent = field.value;
 
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("myUL").appendChild(li);
-  }
-  document.getElementById("myInput").value = "";
+      let delBtn = document.createElement('button');
+      delBtn.classList.add('del-btn');
+      item.append(delBtn);
+      list.append(item);
 
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
+      let delBtns = document.querySelectorAll('.del-btn');
 
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
+      delBtn.addEventListener('click', () => {
+         item.remove();
+      });
+      for (let i = 0; i < delBtns.length; i++) {
+         delBtns[i].addEventListener('click', () => {
+            item.remove();
+         });
+      }
+   } else {
+      field.style.outlineColor = 'red';
+   }
+   field.value = '';
+   field.focus();
+});
+
+addBtn.addEventListener('click', function (evt) {
+   evt.preventDefault();
+   if (field.value) {
+      field.style.outlineColor = '#111';
+      let item = document.createElement('li');
+      item.textContent = field.value;
+      item.classList.add('item');
+
+      let delBtn = document.createElement('button');
+      delBtn.classList.add('del-btn');
+      item.append(delBtn);
+      list.append(item);
+
+      delBtn.addEventListener('click', () => {
+         item.remove();
+      });
+
+   } else {
+      field.style.outlineColor = 'red';
+   }
+   field.value = '';
+   field.focus();
+});
+
+let delBtns = document.querySelectorAll('.del-btn');
+let items = document.querySelectorAll('.item');
+for (let i = 0; i < delBtns.length; i++) {
+   delBtns[i].addEventListener('click', () => {
+      items[i].remove();
+   });
+   items[i].addEventListener('click', () => {
+      items[i].classList.toggle('done');
+   });
 }

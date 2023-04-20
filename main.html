@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>My to list</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <div id="myDIV" class="header">
-        <h2>My To Do List</h2>
-        <input type="text" id="myInput" placeholder="Title...">
-        <span onclick="newElement()" class="addBtn">Add</span>
-      </div>
-      
-      <ul id="myUL">
-        <li>Get up and have breakfast</li>
-        <li class="checked">Pay bills</li>
-        <li>Go to the university</li>
-        <li>Going shopping</li>
-        <li>Read a book</li>
-        <li>Pray</li>
+   <form class="to-do-list">
+      <h1>To Do List</h1>
+      <input class="text-field" type="text" placeholder="Добавьте список">
+      <button class="add-btn">add</button>
+      <ul>
+         <li class="item">Вставать <button class="del-btn"></button></li>
+         <li class="item">Позавтракать <button class="del-btn"></button></li>
+         <li class="item done">Делать Уроки <button class="del-btn"></button></li>
+         <li class="item">Вставать <button class="del-btn"></button></li>
       </ul>
-      <script src="./app.js"></script>
+   </form>
+   <script src="./app.js"></script>
 </body>
+
 </html>

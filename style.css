@@ -1,84 +1,97 @@
-* {
-    box-sizing: border-box;
+body {
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-family: sans-serif;
+   background-color: #ddd;
+   margin: 0;
 }
-ul {
-    margin: 0;
-    padding: 0;
+
+form {
+   width: 500px;
+   display: flex;
+   flex-direction: column;
+   background: linear-gradient(45deg, #000, #777);
+   color: #fff;
+   padding: 15px;
+   border-radius: 5px;
+   box-shadow: -4px -4px 4px #333, 4px 4px 4px #fff;
 }
-ul li {
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    background: #eee;
-    font-size: 18px;
-    transition: 0.2s;
-    user-select: none;
+
+h1 {
+   margin: 0;
 }
-ul li:nth-child(odd) {
-    background: #f9f9f9;
-}
-ul li:hover {
-    background: #ddd;
-}
-ul li.checked {
-    background: #888;
-    color: #fff;
-    text-decoration: line-through;
-}
-ul li.checked::before {
-    content: '';
-    position: absolute;
-    border-color: #fff;
-    border-style: solid;
-    border-width: 0 2px 2px 0;
-    top: 10px;
-    left: 16px;
-    transform: rotate(45deg);
-    height: 15px;
-    width: 7px;
-}
-.close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px 16px 12px 16px;
-}
-.close:hover {
-    background-color: #f44336;
-    color: white;
-}
-.header {
-    background-color: yellowgreen;
-    padding: 30px 40px;
-    color: white;
-    text-align: center;
-}
-.header:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+
+button,
 input {
-    margin: 0;
-    border: none;
-    border-radius: 0;
-    width: 75%;
-    padding: 10px;
-    float: left;
-    font-size: 16px;
+   padding: 10px;
+   font-size: 30px;
 }
-.addBtn {
-    padding: 10px;
-    width: 25%;
-    background: #d9d9d9;
-    color: #555;
-    float: left;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-    border-radius: 0;
+
+input {
+   outline-width: 10px;
+   outline-color: #111;
 }
-.addBtn:hover {
-    background-color: #bbb;
+
+.add-btn {
+   text-transform: uppercase;
+   color: white;
+   background-color: #333;
+   border: none;
+}
+
+form>*:not(:last-child) {
+   margin-bottom: 10px;
+}
+
+ul {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+
+li {
+   padding: 10px;
+   padding-left: 20px;
+   border-radius: 4px;
+   display: flex;
+   align-items: center;
+   letter-spacing: 2px;
+   justify-content: space-between;
+}
+
+li:not(:last-child) {
+   margin-bottom: 5px;
+}
+
+li:nth-child(even) {
+   background: linear-gradient(45deg, rgba(255, 99, 71, 0.7), rgba(255, 255, 0, 0.7));
+}
+
+li:nth-child(odd) {
+   background: linear-gradient(45deg, rgba(0, 255, 255, 0.7), rgba(30, 143, 255, 0.7));
+}
+
+.done {
+   text-decoration: line-through;
+}
+
+.del-btn {
+   background-color: transparent;
+   border: none;
+   position: relative;
+   width: 20px;
+   height: 20px;
+}
+
+.del-btn::after {
+   content: '';
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   background-color: tomato;
+   top: 0;
+   left: 0;
+   clip-path: polygon(15% 0, 0 15%, 35% 50%, 0 85%, 15% 100%, 50% 65%, 85% 100%, 100% 85%, 65% 50%, 100% 15%, 85% 0, 50% 35%);
 }

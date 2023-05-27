@@ -1,72 +1,58 @@
 let form = document.querySelector('form'),
    list = document.querySelector('ul'),
    field = document.querySelector('.text-field'),
-   addBtn = document.querySelector('.add-btn');
+   addBtn = document.querySelector('.add-btn'),
+   delBtns = document.querySelectorAll('.del-btn'),
+   items = document.querySelectorAll('.item');
 
 window.addEventListener('load', () => {
    field.focus();
 });
 
-form.addEventListener('submit', function add(evt) {
-   evt.preventDefault();
+function addLiEl() {
    if (field.value) {
       field.style.outlineColor = '#111';
+
       let item = document.createElement('li');
       item.textContent = field.value;
+      item.addEventListener('click', () => {
+         item.classList.toggle('done');
+      });
 
       let delBtn = document.createElement('button');
       delBtn.classList.add('del-btn');
-      item.append(delBtn);
-      list.append(item);
-
-      let delBtns = document.querySelectorAll('.del-btn');
-
       delBtn.addEventListener('click', () => {
          item.remove();
       });
-      for (let i = 0; i < delBtns.length; i++) {
-         delBtns[i].addEventListener('click', () => {
-            item.remove();
-         });
-      }
+      
+      item.append(delBtn);
+      list.append(item);
    } else {
       field.style.outlineColor = 'red';
    }
    field.value = '';
    field.focus();
+}
+
+form.addEventListener('submit', function (e) {
+   e.preventDefault();
+   addLiEl();
 });
 
-addBtn.addEventListener('click', function (evt) {
-   evt.preventDefault();
-   if (field.value) {
-      field.style.outlineColor = '#111';
-      let item = document.createElement('li');
-      item.textContent = field.value;
-      item.classList.add('item');
-
-      let delBtn = document.createElement('button');
-      delBtn.classList.add('del-btn');
-      item.append(delBtn);
-      list.append(item);
-
-      delBtn.addEventListener('click', () => {
-         item.remove();
-      });
-
-   } else {
-      field.style.outlineColor = 'red';
-   }
-   field.value = '';
-   field.focus();
+addBtn.addEventListener('click', function (e) {
+   e.preventDefault();
+   addLiEl();
 });
 
-let delBtns = document.querySelectorAll('.del-btn');
-let items = document.querySelectorAll('.item');
-for (let i = 0; i < delBtns.length; i++) {
-   delBtns[i].addEventListener('click', () => {
-      items[i].remove();
-   });
+for (let i = 0; i < items.length; i++) {
    items[i].addEventListener('click', () => {
       items[i].classList.toggle('done');
    });
 }
+
+for (let i = 0; i < delBtns.length; i++) {
+   delBtns[i].addEventListener('click', () => {
+      items[i].remove();
+   });
+}
+

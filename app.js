@@ -24,7 +24,7 @@ function addLiEl() {
       delBtn.addEventListener('click', () => {
          item.remove();
       });
-      
+
       item.append(delBtn);
       list.append(item);
    } else {
@@ -55,4 +55,3 @@ for (let i = 0; i < delBtns.length; i++) {
       items[i].remove();
    });
 }
-

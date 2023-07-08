@@ -1,57 +1,85 @@
-let form = document.querySelector('form'),
-   list = document.querySelector('ul'),
-   field = document.querySelector('.text-field'),
-   addBtn = document.querySelector('.add-btn'),
-   delBtns = document.querySelectorAll('.del-btn'),
-   items = document.querySelectorAll('.item');
+let formEL = document.querySelector('form'),
+   field = document.querySelector('.field'),
+   listEl = document.querySelector('.list'),
+   addBtn = document.querySelector('.add-btn');
+
+formEL.addEventListener('submit', (evt) => {
+   evt.preventDefault();
+})
+
+addBtn.addEventListener('click', () => {
+   addLiToUl();
+})
 
 window.addEventListener('load', () => {
    field.focus();
+   field.placeholder = 'write something . . .';
+   loadData();
 });
 
-function addLiEl() {
+function addLiToUl() {
    if (field.value) {
       field.style.outlineColor = '#111';
 
-      let item = document.createElement('li');
-      item.textContent = field.value;
-      item.addEventListener('click', () => {
-         item.classList.toggle('done');
+      let liEl = document.createElement('li');
+      liEl.textContent = field.value;
+      liEl.classList.add('item');
+      listEl.append(liEl);
+
+      liEl.addEventListener('click', () => {
+         liEl.classList.toggle('done');
+         saveData();
       });
 
       let delBtn = document.createElement('button');
       delBtn.classList.add('del-btn');
+      liEl.append(delBtn);
+
       delBtn.addEventListener('click', () => {
-         item.remove();
+         liEl.remove();
+         saveData();
       });
-
-      item.append(delBtn);
-      list.append(item);
    } else {
-      field.style.outlineColor = 'red';
+      field.style.outlineColor = 'tomato';
    }
-   field.value = '';
    field.focus();
+   field.value = '';
+   saveData();
 }
 
-form.addEventListener('submit', function (e) {
-   e.preventDefault();
-   addLiEl();
-});
+function saveData() {
+   let arrItems = [];
 
-addBtn.addEventListener('click', function (e) {
-   e.preventDefault();
-   addLiEl();
-});
+   let items = document.querySelectorAll('.item');
+   for (let i = 0; i < items.length; i++) {
+      arrItems.push(items[i].textContent);
+   }
 
-for (let i = 0; i < items.length; i++) {
-   items[i].addEventListener('click', () => {
-      items[i].classList.toggle('done');
-   });
+   localStorage.setItem('items', JSON.stringify(arrItems));
 }
 
-for (let i = 0; i < delBtns.length; i++) {
-   delBtns[i].addEventListener('click', () => {
-      items[i].remove();
-   });
+function loadData() {
+   let arrItems = JSON.parse(localStorage.getItem('items'));
+   if(arrItems) {
+      for (let i = 0; i < arrItems.length; i++) {
+         let liEl = document.createElement('li');
+         liEl.textContent = arrItems[i];
+         liEl.classList.add('item');
+         listEl.append(liEl);
+
+         liEl.addEventListener('click', () => {
+            liEl.classList.toggle('done');
+            saveData();
+         });
+
+         let delBtn = document.createElement('button');
+         delBtn.classList.add('del-btn');
+         liEl.append(delBtn);
+
+         delBtn.addEventListener('click', () => {
+            liEl.remove();
+            saveData();
+         });
+      }
+   }
 }

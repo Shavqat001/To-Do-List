@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>To-Do List</title>
    <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
-   <form class="to-do-list">
-      <h1>To Do List</h1>
-      <input class="text-field" type="text" placeholder="Добавьте список">
-      <button class="add-btn">add</button>
-      <ul>
-         <li class="item">Вставать <button class="del-btn"></button></li>
-         <li class="item">Позавтракать <button class="del-btn"></button></li>
-         <li class="item done">Делать Уроки <button class="del-btn"></button></li>
-         <li class="item">Ещё раз позавтракать <button class="del-btn"></button></li>
-      </ul>
+   <form>
+      <input class="field" type="text">
+      <button class="add-btn" type="submit">add</button>
    </form>
+
+   <ul class="list"></ul>
    <script src="./app.js"></script>
 </body>
-
 </html>

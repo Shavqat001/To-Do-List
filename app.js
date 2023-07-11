@@ -22,18 +22,32 @@ function addLiToUl() {
       field.style.outlineColor = '#111';
 
       let liEl = document.createElement('li');
-      liEl.textContent = field.value;
       liEl.classList.add('item');
       listEl.append(liEl);
 
-      liEl.addEventListener('click', () => {
-         liEl.classList.toggle('done');
+      let text = document.createElement('span');
+      text.textContent = field.value;
+      liEl.prepend(text);
+
+      text.addEventListener('click', () => {
+         text.classList.toggle('done');
+         saveData();
+      });
+
+      let div = document.createElement('div');
+      liEl.append(div);
+
+      let editBtn = document.createElement('button');
+      editBtn.classList.add('edit-btn');
+      div.append(editBtn);
+
+      editBtn.addEventListener('click', () => {
          saveData();
       });
 
       let delBtn = document.createElement('button');
       delBtn.classList.add('del-btn');
-      liEl.append(delBtn);
+      div.append(delBtn);
 
       delBtn.addEventListener('click', () => {
          liEl.remove();
@@ -60,7 +74,7 @@ function saveData() {
 
 function loadData() {
    let arrItems = JSON.parse(localStorage.getItem('items'));
-   if(arrItems) {
+   if (arrItems) {
       for (let i = 0; i < arrItems.length; i++) {
          let liEl = document.createElement('li');
          liEl.textContent = arrItems[i];
@@ -71,10 +85,16 @@ function loadData() {
             liEl.classList.toggle('done');
             saveData();
          });
+         let div = document.createElement('div');
+         liEl.append(div);
+
+         let editBtn = document.createElement('button');
+         editBtn.classList.add('edit-btn');
+         div.append(editBtn);
 
          let delBtn = document.createElement('button');
          delBtn.classList.add('del-btn');
-         liEl.append(delBtn);
+         div.append(delBtn);
 
          delBtn.addEventListener('click', () => {
             liEl.remove();

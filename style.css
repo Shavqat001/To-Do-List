@@ -48,9 +48,11 @@ form {
    align-items: center;
    padding: 10px;
 }
+
 .item::selection {
    background-color: transparent;
 }
+
 .item:not(:last-child) {
    margin-bottom: 5px;
 }
@@ -63,6 +65,11 @@ form {
    background-color: rgba(0, 152, 79, 0.7);
 }
 
+.done {
+   text-decoration: line-through;
+   text-decoration-color: #fff;
+}
+
 .del-btn {
    border: none;
    width: 25px;
@@ -71,24 +78,40 @@ form {
    position: relative;
    cursor: pointer;
    transition: 200ms;
-}
-
-.del-btn:hover {
-   box-shadow: 0 0 5px #fff;
+   display: inline-flex;
+   align-items: center;
 }
 
 .del-btn::after {
    content: '';
+   background-color: tomato;
    position: absolute;
    width: 25px;
    height: 25px;
-   background-color: tomato;
    top: 0;
    left: 0;
    clip-path: polygon(15% 0, 0 15%, 35% 50%, 0 85%, 15% 100%, 50% 65%, 85% 100%, 100% 85%, 65% 50%, 100% 15%, 85% 0, 50% 35%);
 }
 
-.done {
-   text-decoration: line-through;
-   text-decoration-color: #fff;
+.edit-btn {
+   width: 25px;
+   height: 25px;
+   position: relative;
+   margin-right: 10px;
+   background: transparent;
+   border: none;
+   display: inline-flex;
+   align-items: center;
+   cursor: pointer;
+}
+
+.edit-btn::after {
+   content: '';
+   width: 25px;
+   height: 25px;
+   position: absolute;
+   background-color: #fff;
+   clip-path: polygon(75% 0, 100% 25%, 25% 100%, 0 100%, 0 75%);
+   left: 0;
+   top: 0;
 }

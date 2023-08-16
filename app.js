@@ -45,6 +45,11 @@ function addLiToUl() {
       });
 
       editBtn.addEventListener('click', () => {
+         let okBtns = document.querySelectorAll('.ok-btn');
+         okBtns.forEach(el => {
+            el.remove();
+         });
+         
          if (div.children.length !== 3) {
             let okBtn = document.createElement('button');
             okBtn.textContent = 'ok';
@@ -60,7 +65,6 @@ function addLiToUl() {
                field.focus();
             });
          }
-         saveData();
       });
 
       delBtn.addEventListener('click', () => {
@@ -127,6 +131,10 @@ function loadData() {
          });
 
          editBtn.addEventListener('click', () => {
+            let okBtns = document.querySelectorAll('.ok-btn');
+            okBtns.forEach(el => {
+               el.remove();
+            });
             if (div.children.length !== 3) {
                let okBtn = document.createElement('button');
                okBtn.textContent = 'ok';
@@ -142,7 +150,6 @@ function loadData() {
                   field.focus();
                });
             }
-            saveData();
          });
 
          delBtn.addEventListener('click', () => {

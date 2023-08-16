@@ -5,7 +5,6 @@ let formEL = document.querySelector('form'),
 
 formEL.addEventListener('submit', (evt) => {
    evt.preventDefault();
-   // Code to handle form submission
 });
 
 addBtn.addEventListener('click', () => {
@@ -46,7 +45,22 @@ function addLiToUl() {
       });
 
       editBtn.addEventListener('click', () => {
-         // Code to handle edit button click
+         if (div.children.length !== 3) {
+            let okBtn = document.createElement('button');
+            okBtn.textContent = 'ok';
+            okBtn.classList.add('ok-btn');
+            div.append(okBtn);
+
+            field.value = text.textContent;
+
+            okBtn.addEventListener('click', () => {
+               text.textContent = field.value;
+               okBtn.remove();
+               field.value = '';
+               field.focus();
+            });
+         }
+         saveData();
       });
 
       delBtn.addEventListener('click', () => {
@@ -85,7 +99,6 @@ function loadData() {
    let arrItems = JSON.parse(localStorage.getItem('items'));
    let arrClasses = JSON.parse(localStorage.getItem('classes'));
 
-   console.log(arrClasses);
    if (arrItems && arrClasses) {
       for (let i = 0; i < arrItems.length; i++) {
          let liEl = document.createElement('li'),
@@ -114,7 +127,22 @@ function loadData() {
          });
 
          editBtn.addEventListener('click', () => {
-            // Code to handle edit button click
+            if (div.children.length !== 3) {
+               let okBtn = document.createElement('button');
+               okBtn.textContent = 'ok';
+               okBtn.classList.add('ok-btn');
+               div.append(okBtn);
+
+               field.value = text.textContent;
+
+               okBtn.addEventListener('click', () => {
+                  text.textContent = field.value;
+                  okBtn.remove();
+                  field.value = '';
+                  field.focus();
+               });
+            }
+            saveData();
          });
 
          delBtn.addEventListener('click', () => {

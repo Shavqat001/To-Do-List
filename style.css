@@ -24,8 +24,8 @@ form {
    border: 5px solid #ccc;
 }
 
-.add-btn {
-   padding: 5px 15px;
+.add-btn, .ok-btn {
+   padding: 3px 15px;
    background-color: #4CAF50;
    color: #fff;
    font-size: 27px;
@@ -64,7 +64,10 @@ form {
 .item:nth-child(even) {
    background-color: rgba(0, 152, 79, 0.7);
 }
-
+.item div {
+   display: flex;
+   align-items: center;
+}
 .done {
    text-decoration: line-through;
    text-decoration-color: #fff;
@@ -114,4 +117,8 @@ form {
    clip-path: polygon(75% 0, 100% 25%, 25% 100%, 0 100%, 0 75%);
    left: 0;
    top: 0;
+}
+
+.ok-btn {
+   margin-left: 10px;
 }

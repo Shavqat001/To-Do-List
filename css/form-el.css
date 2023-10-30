@@ -1,0 +1,23 @@
+.form-el {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.form-el__field {
+    padding: 5px 15px;
+    font-size: 30px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 10px;
+    border: 5px solid #ccc;
+}
+
+.form-el__add-button {
+    padding: 3px 15px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 27px;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+}

@@ -1,0 +1,99 @@
+.todo-list {
+    width: 490px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.todo-list__item {
+    border-radius: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.todo-list__item::selection {
+    background-color: transparent;
+}
+
+.todo-list__item:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.todo-list__item:nth-child(odd) {
+    background-color: rgba(113, 136, 110, 0.823);
+}
+
+.todo-list__item:nth-child(even) {
+    background-color: rgba(0, 152, 79, 0.7);
+}
+
+.done {
+    text-decoration: line-through;
+    text-decoration-color: #fff;
+}
+
+.todo-list__item div {
+    display: flex;
+    align-items: center;
+}
+
+
+.edit-btn {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    margin-right: 10px;
+    background: transparent;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.edit-btn::after {
+    content: '';
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-color: #fff;
+    clip-path: polygon(75% 0, 100% 25%, 25% 100%, 0 100%, 0 75%);
+    left: 0;
+    top: 0;
+}
+
+.del-btn {
+    border: none;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    transition: 200ms;
+    display: inline-flex;
+    align-items: center;
+}
+
+.del-btn::after {
+    content: '';
+    background-color: tomato;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    clip-path: polygon(15% 0, 0 15%, 35% 50%, 0 85%, 15% 100%, 50% 65%, 85% 100%, 100% 85%, 65% 50%, 100% 15%, 85% 0, 50% 35%);
+}
+
+.ok-btn {
+    padding: 3px 15px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 27px;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    margin-left: 10px;
+}

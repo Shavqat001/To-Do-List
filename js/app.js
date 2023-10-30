@@ -1,7 +1,7 @@
-let formEL = document.querySelector('form'),
-   field = document.querySelector('.field'),
-   listEl = document.querySelector('.list'),
-   addBtn = document.querySelector('.add-btn');
+let formEL = document.querySelector('.form-el'),
+   field = document.querySelector('.form-el__field'),
+   listEl = document.querySelector('.todo-list'),
+   addBtn = document.querySelector('.form-el__add-button');
 
 formEL.addEventListener('submit', (evt) => {
    evt.preventDefault();
@@ -12,7 +12,7 @@ addBtn.addEventListener('click', () => {
 });
 
 window.addEventListener('load', () => {
-   field.placeholder = 'write something . . .';
+   field.placeholder = 'Write Something . . .';
    loadData();
    field.focus();
 });
@@ -27,7 +27,7 @@ function addLiToUl() {
          editBtn = document.createElement('button'),
          delBtn = document.createElement('button');
 
-      liEl.classList.add('item');
+      liEl.classList.add('todo-list__item');
       text.textContent = field.value;
       text.classList.add('text');
       editBtn.classList.add('edit-btn');
@@ -49,7 +49,7 @@ function addLiToUl() {
          okBtns.forEach(el => {
             el.remove();
          });
-         
+
          if (div.children.length !== 3) {
             let okBtn = document.createElement('button');
             okBtn.textContent = 'ok';
@@ -65,6 +65,7 @@ function addLiToUl() {
                field.focus();
             });
          }
+         field.focus();
       });
 
       delBtn.addEventListener('click', () => {
@@ -84,7 +85,7 @@ function saveData() {
    let arrItems = [];
    let arrDone = [];
 
-   let items = document.querySelectorAll('.item');
+   let items = document.querySelectorAll('.todo-list__item');
    let text = document.querySelectorAll('span');
 
    for (let i = 0; i < items.length; i++) {
@@ -111,7 +112,7 @@ function loadData() {
             editBtn = document.createElement('button'),
             delBtn = document.createElement('button');
 
-         liEl.classList.add('item');
+         liEl.classList.add('todo-list__item');
          text.textContent = arrItems[i];
          if (arrClasses[i]) {
             text.classList.add('done');
@@ -135,6 +136,7 @@ function loadData() {
             okBtns.forEach(el => {
                el.remove();
             });
+            
             if (div.children.length !== 3) {
                let okBtn = document.createElement('button');
                okBtn.textContent = 'ok';
@@ -150,6 +152,8 @@ function loadData() {
                   field.focus();
                });
             }
+            field.focus();
+
          });
 
          delBtn.addEventListener('click', () => {

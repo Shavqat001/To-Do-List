@@ -2,21 +2,26 @@
 <html class="page" lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>To-Do List</title>
-   <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body class="page__body">
-   <form class="form-el">
-      <input class="form-el__field">
-      <button class="form-el__add-button" type="submit">add</button>
-   </form>
+<form class="form-el">
+    <input class="form-el__field" id="field">
+    <label class="form-el__label" for="field">Write something . . .</label>
+    <button class="form-el__add-button" type="submit">add</button>
+</form>
 
-   <ul class="todo-list"></ul>
+<ul class="todo-list"></ul>
 
-   <script src="./js/app.js" defer></script>
+<script src="js/data.js" defer></script>
+<script src="js/load.js" defer></script>
+<script src="js/save.js" defer></script>
+<script src="js/AddNewItem.js" defer></script>
+<script src="js/dragAndDrop.js" defer></script>
 </body>
 
 </html>

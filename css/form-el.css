@@ -1,6 +1,7 @@
 .form-el {
     display: flex;
     margin-bottom: 10px;
+    position: relative;
 }
 
 .form-el__field {
@@ -11,6 +12,24 @@
     border-radius: 10px;
     border: 5px solid #ccc;
 }
+
+.form-el__field:focus + .form-el__label {
+    top: -29px;
+}
+
+.form-el__label {
+    color: #1119;
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-weight: 500;
+    transition: 350ms;
+    background: #fff;
+    border-radius: 15px 15px 0 0;
+    padding: 0 15px;
+}
+
 
 .form-el__add-button {
     padding: 3px 15px;

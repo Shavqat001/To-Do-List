@@ -8,5 +8,4 @@ body {
     font-size: 35px;
     background: linear-gradient(45deg, #345, #789);
     margin: 0;
-    user-select: none;
 }

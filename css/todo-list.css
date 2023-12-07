@@ -12,6 +12,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    cursor: move;
 }
 
 .todo-list__item::selection {
@@ -19,7 +20,7 @@
 }
 
 .todo-list__item:not(:last-child) {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .todo-list__item:nth-child(odd) {
@@ -28,6 +29,10 @@
 
 .todo-list__item:nth-child(even) {
     background-color: rgba(0, 152, 79, 0.7);
+}
+
+.todo-list__item span {
+    /*user-select: none;*/
 }
 
 .done {

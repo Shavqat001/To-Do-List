@@ -1,3 +1,3 @@
-# Simple To-Do-List 
+# Simple To-Do-List
 ## created with html, css and js
-### also it's has a localstorage
+### it also has local storage with which you can save data to the browser and the data will not be lost when updating

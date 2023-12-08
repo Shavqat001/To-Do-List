@@ -9,4 +9,4 @@ A basic to-do list created using HTML, CSS, and JavaScript. The list supports dr
 
 Feel free to clone and customize this to-do list for your own projects!
 
-![To-Do List]('./img/to-do-list.jpg')
+![To-Do List](./img/to-do-list.jpg)

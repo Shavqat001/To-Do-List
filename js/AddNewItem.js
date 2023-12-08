@@ -58,8 +58,9 @@ function addLiToUl() {
     field.focus();
     field.value = '';
     saveData();
+    drag();
 }
 
 field.addEventListener('input', () => {
-        field.style.outlineColor = '#111';
+    field.style.outlineColor = '#111';
 });

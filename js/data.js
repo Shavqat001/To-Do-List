@@ -15,4 +15,5 @@ addBtn.addEventListener('click', () => {
 window.addEventListener('load', () => {
     loadData();
     field.focus();
+    drag();
 });

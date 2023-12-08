@@ -32,7 +32,7 @@
 }
 
 .todo-list__item span {
-    /*user-select: none;*/
+    user-select: none;
 }
 
 .done {

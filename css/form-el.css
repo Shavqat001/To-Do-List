@@ -5,6 +5,7 @@
 }
 
 .form-el__field {
+    min-width: 365px;
     padding: 5px 15px;
     font-size: 30px;
     margin-right: 10px;
@@ -19,7 +20,6 @@
 
 .form-el__label {
     color: #1119;
-    font-size: 30px;
     position: absolute;
     top: 10px;
     left: 10px;
@@ -28,14 +28,17 @@
     background: #fff;
     border-radius: 15px 15px 0 0;
     padding: 0 15px;
+    font-size: 35px;
 }
 
 .form-el__add-button {
     padding: 3px 15px;
     background-color: #4CAF50;
     color: #fff;
-    font-size: 27px;
+    /* font-weight: 900; */
+    font-size: 30px;
     border: none;
     border-radius: 10px;
     text-transform: uppercase;
+    /* text-align: center; */
 }

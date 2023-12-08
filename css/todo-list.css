@@ -3,7 +3,6 @@
     padding: 0;
     margin: 0;
     list-style: none;
-    /*position: relative;*/
 }
 
 .todo-list__item {
@@ -35,6 +34,8 @@
 
 .todo-list__item span {
     user-select: none;
+    font-family: 'akwilo', sans-serif;
+    font-size: 38px;
 }
 
 .done {

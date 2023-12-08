@@ -1,11 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'akwilo', sans-serif;
+    letter-spacing: 8px;
+}
+
 body {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-family: sans-serif;
     font-size: 35px;
-    background: linear-gradient(45deg, #345, #789);
-    margin: 0;
+    background: linear-gradient(90deg, #345, #789);
 }

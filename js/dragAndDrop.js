@@ -9,10 +9,9 @@ function drag() {
             var shiftY = e.pageY - coords.top;
 
             ball.style.position = 'absolute';
-            // document.body.appendChild(ball);
             moveAt(e);
 
-            ball.style.zIndex = 1000; // над другими элементами
+            ball.style.zIndex = 1000;
 
             function moveAt(e) {
                 ball.style.left = e.pageX - shiftX + 'px';
@@ -34,7 +33,7 @@ function drag() {
             return false;
         };
 
-        function getCoords(elem) {   // кроме IE8-
+        function getCoords(elem) {
             var box = elem.getBoundingClientRect();
             return {
                 top: box.top + pageYOffset,

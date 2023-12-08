@@ -34,13 +34,21 @@
 
 .todo-list__item span {
     user-select: none;
-    font-family: 'akwilo', sans-serif;
     font-size: 38px;
 }
-
+.todo-list__item span:nth-child(even) {
+    user-select: none;
+    font-size: 38px;
+    font-family: 'museo', sans-serif;
+}
+.todo-list__item span:nth-child(odd) {
+    user-select: none;
+    font-size: 38px;
+    font-family: 'akwilo', sans-serif;
+}
 .done {
     text-decoration: line-through;
-    text-decoration-color: #fff;
+    text-decoration-color: #fff9;
 }
 
 .todo-list__item div {

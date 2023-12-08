@@ -42,6 +42,7 @@ function addLiToUl() {
                     okBtn.remove();
                     field.value = '';
                     field.focus();
+                    saveData();
                 });
             }
             field.focus();

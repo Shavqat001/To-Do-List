@@ -1,3 +1,6 @@
+import { loadData } from "./load.js";
+import { addLiToUl } from "./add-new-item.js";
+
 let formEL = document.querySelector('.form-el'),
     field = document.querySelector('.form-el__field'),
     label = document.querySelector('.form-el__label'),
@@ -15,5 +18,4 @@ addBtn.addEventListener('click', () => {
 window.addEventListener('load', () => {
     loadData();
     field.focus();
-    drag();
 });

@@ -16,3 +16,5 @@ function saveData() {
     localStorage.setItem('items', JSON.stringify(arrItems));
     localStorage.setItem('classes', JSON.stringify(arrDone));
 }
+
+export { saveData }

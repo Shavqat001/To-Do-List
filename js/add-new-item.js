@@ -1,10 +1,13 @@
+import { saveData } from "./save.js";
+
 function addLiToUl() {
     if (field.value) {
         let liEl = document.createElement('li'),
             text = document.createElement('span'),
             div = document.createElement('div'),
             editBtn = document.createElement('button'),
-            delBtn = document.createElement('button');
+            delBtn = document.createElement('button'),
+            listEl = document.querySelector('.todo-list');
 
         liEl.classList.add('todo-list__item');
         text.textContent = field.value;
@@ -59,9 +62,10 @@ function addLiToUl() {
     field.focus();
     field.value = '';
     saveData();
-    drag();
 }
 
 field.addEventListener('input', () => {
     field.style.outlineColor = '#111';
 });
+
+export {addLiToUl}

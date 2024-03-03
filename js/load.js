@@ -1,3 +1,5 @@
+import { saveData } from "./save.js";
+
 function loadData() {
     let arrItems = JSON.parse(localStorage.getItem('items'));
     let arrClasses = JSON.parse(localStorage.getItem('classes'));
@@ -8,7 +10,8 @@ function loadData() {
                 text = document.createElement('span'),
                 div = document.createElement('div'),
                 editBtn = document.createElement('button'),
-                delBtn = document.createElement('button');
+                delBtn = document.createElement('button'),
+                listEl = document.querySelector('.todo-list');
 
             liEl.classList.add('todo-list__item');
             text.textContent = arrItems[i];
@@ -62,3 +65,5 @@ function loadData() {
         }
     }
 }
+
+export { loadData }

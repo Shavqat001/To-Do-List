@@ -7,7 +7,7 @@ function loadData() {
     if (arrItems && arrClasses) {
         for (let i = 0; i < arrItems.length; i++) {
             let liEl = document.createElement('li'),
-                text = document.createElement('span'),
+                text = document.createElement('p'),
                 div = document.createElement('div'),
                 editBtn = document.createElement('button'),
                 delBtn = document.createElement('button'),

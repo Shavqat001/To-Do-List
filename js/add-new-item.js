@@ -3,7 +3,7 @@ import { saveData } from "./save.js";
 function addLiToUl() {
     if (field.value) {
         let liEl = document.createElement('li'),
-            text = document.createElement('span'),
+            text = document.createElement('p'),
             div = document.createElement('div'),
             editBtn = document.createElement('button'),
             delBtn = document.createElement('button'),

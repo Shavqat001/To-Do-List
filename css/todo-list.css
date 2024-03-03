@@ -31,20 +31,19 @@
     background-color: rgba(0, 152, 79, 0.7);
 }
 
-.todo-list__item span {
+.todo-list__item p {
     user-select: none;
-    font-size: 38px;
+    font-size: 36px;
+    max-width: 380px;
+    overflow: hidden;
+    overflow-x: scroll;
+    text-wrap: nowrap;
 }
-.todo-list__item span:nth-child(even) {
-    user-select: none;
-    font-size: 38px;
-    font-family: 'museo', sans-serif;
+
+.todo-list__item p::-webkit-scrollbar {
+    height: 0;
 }
-.todo-list__item span:nth-child(odd) {
-    user-select: none;
-    font-size: 38px;
-    font-family: 'akwilo', sans-serif;
-}
+
 .done {
     text-decoration: line-through;
     text-decoration-color: #fff9;
@@ -54,7 +53,6 @@
     display: flex;
     align-items: center;
 }
-
 
 .edit-btn {
     width: 25px;

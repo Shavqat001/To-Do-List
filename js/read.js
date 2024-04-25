@@ -1,6 +1,8 @@
 import { saveData } from "./save.js";
+import { isEdit } from "./data.js";
+import { update } from "./update.js";
 
-function loadData() {
+function read() {
     let arrItems = JSON.parse(localStorage.getItem('items'));
     let arrClasses = JSON.parse(localStorage.getItem('classes'));
 
@@ -32,30 +34,7 @@ function loadData() {
                 saveData();
             });
 
-            editBtn.addEventListener('click', () => {
-                let okBtns = document.querySelectorAll('.ok-btn');
-                okBtns.forEach(el => {
-                    el.remove();
-                });
-
-                if (div.children.length !== 3) {
-                    let okBtn = document.createElement('button');
-                    okBtn.textContent = 'ok';
-                    okBtn.classList.add('ok-btn');
-                    div.append(okBtn);
-
-                    field.value = text.textContent;
-
-                    okBtn.addEventListener('click', () => {
-                        text.textContent = field.value;
-                        okBtn.remove();
-                        field.value = '';
-                        field.focus();
-                        saveData();
-                    });
-                }
-                field.focus();
-            });
+            editBtn.addEventListener('click', update);
 
             delBtn.addEventListener('click', () => {
                 liEl.remove();
@@ -66,4 +45,4 @@ function loadData() {
     }
 }
 
-export { loadData }
+export { read, isEdit }

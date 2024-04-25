@@ -1,21 +1,24 @@
-import { loadData } from "./load.js";
-import { addLiToUl } from "./add-new-item.js";
+import { read } from "./read.js";
+import { create } from "./create.js";
+import { ok } from "./ok.js";
 
 let formEL = document.querySelector('.form-el'),
     field = document.querySelector('.form-el__field'),
-    label = document.querySelector('.form-el__label'),
-    listEl = document.querySelector('.todo-list'),
-    addBtn = document.querySelector('.form-el__add-button');
+    createButton = document.querySelector('.form-el__add-button');
+
+const isEdit = { edit: true };
 
 formEL.addEventListener('submit', (evt) => {
     evt.preventDefault();
 });
 
-addBtn.addEventListener('click', () => {
-    addLiToUl();
+createButton.addEventListener('click', () => {
+    isEdit['edit'] ? create() : ok();
 });
 
 window.addEventListener('load', () => {
-    loadData();
+    read();
     field.focus();
 });
+
+export { createButton, isEdit, field };

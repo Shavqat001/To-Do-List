@@ -3,7 +3,7 @@ function saveData() {
     let arrDone = [];
 
     let items = document.querySelectorAll('.todo-list__item');
-    let text = document.querySelectorAll('span');
+    let text = document.querySelectorAll('p');
 
     for (let i = 0; i < items.length; i++) {
         arrItems.push(items[i].textContent);

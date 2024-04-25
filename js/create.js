@@ -1,6 +1,8 @@
 import { saveData } from "./save.js";
+import { isEdit } from "./data.js";
+import { update } from "./update.js";
 
-function addLiToUl() {
+function create() {
     if (field.value) {
         let liEl = document.createElement('li'),
             text = document.createElement('p'),
@@ -26,30 +28,7 @@ function addLiToUl() {
             saveData();
         });
 
-        editBtn.addEventListener('click', () => {
-            let okBtns = document.querySelectorAll('.ok-btn');
-            okBtns.forEach(el => {
-                el.remove();
-            });
-
-            if (div.children.length !== 3) {
-                let okBtn = document.createElement('button');
-                okBtn.textContent = 'ok';
-                okBtn.classList.add('ok-btn');
-                div.append(okBtn);
-
-                field.value = text.textContent;
-
-                okBtn.addEventListener('click', () => {
-                    text.textContent = field.value;
-                    okBtn.remove();
-                    field.value = '';
-                    field.focus();
-                    saveData();
-                });
-            }
-            field.focus();
-        });
+        editBtn.addEventListener('click', update);
 
         delBtn.addEventListener('click', () => {
             liEl.remove();
@@ -68,4 +47,4 @@ field.addEventListener('input', () => {
     field.style.outlineColor = '#111';
 });
 
-export {addLiToUl}
+export { create, isEdit }

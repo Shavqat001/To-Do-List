@@ -1,31 +1,24 @@
 import { saveData } from "./save.js";
 import { edit } from "./data.js";
+import { buildEl, getEl } from "./functions.js";
 
 function create() {
     if (!field.value) {
         field.style.outlineColor = 'tomato';
+        field.focus();
         return;
     }
 
-    let liEl = document.createElement('li');
-    let text = document.createElement('p');
-    let div = document.createElement('div');
-    let editBtn = document.createElement('button');
-    let delBtn = document.createElement('button');
-    let listEl = document.querySelector('.todo-list');
+    let listEl = getEl('.todo-list'),
 
-    liEl.classList.add('todo-list__item');
-    text.textContent = field.value;
-    text.classList.add('text');
-    editBtn.classList.add('edit-btn');
-    delBtn.classList.add('del-btn');
-
-    div.append(editBtn, delBtn);
-    liEl.append(text, div);
-    listEl.append(liEl);
+        liEl = buildEl(listEl, 'li', '', 'todo-list__item'),
+        text = buildEl(liEl, 'p', field.value, 'text'),
+        div = buildEl(liEl, 'div', '', ''),
+        editBtn = buildEl(div, 'button', '', 'edit-btn'),
+        delBtn = buildEl(div, 'button', '', 'del-btn');
 
     editBtn.addEventListener('click', () => edit(liEl));
-    
+
     text.addEventListener('click', () => {
         text.classList.toggle('done');
         saveData();

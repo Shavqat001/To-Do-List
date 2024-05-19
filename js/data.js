@@ -1,10 +1,11 @@
 import { saveData } from "./save.js";
 import { create } from "./create.js";
 import { read } from "./read.js";
+import { getEl } from "./functions.js";
 
-let formEl = document.querySelector('.form'),
-    field = document.querySelector('.form__field'),
-    formButton = document.querySelector('.form__button');
+let formEl = getEl('.form'),
+    field = getEl('.form__field'),
+    formButton = getEl('.form__button');
 
 let currentEditingElement = null;
 

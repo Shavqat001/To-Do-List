@@ -1,10 +1,10 @@
-.form-el {
+.form {
     display: flex;
     margin-bottom: 10px;
     position: relative;
 }
 
-.form-el__field {
+.form__field {
     min-width: 365px;
     padding: 5px 15px;
     font-size: 30px;
@@ -14,11 +14,11 @@
     border: 5px solid #ccc;
 }
 
-.form-el__field:focus + .form-el__label {
+.form__field:focus + .form__label {
     top: -29px;
 }
 
-.form-el__label {
+.form__label {
     color: #1119;
     position: absolute;
     top: 10px;
@@ -31,7 +31,7 @@
     font-size: 35px;
 }
 
-.form-el__add-button {
+.form__button {
     padding: 3px 15px;
     background-color: #4CAF50;
     color: #fff;

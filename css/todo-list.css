@@ -33,7 +33,7 @@
 
 .todo-list__item p {
     user-select: none;
-    font-size: 36px;
+    font-size: 28px;
     max-width: 380px;
     overflow: hidden;
     overflow-x: scroll;

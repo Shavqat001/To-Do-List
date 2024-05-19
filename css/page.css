@@ -1,8 +1,9 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'akwilo', sans-serif;
-    letter-spacing: 8px;
+    /* font-family: 'font', sans-serif; */
+    /* font-weight: bolder; */
+    letter-spacing: 6px;
 }
 
 body {
@@ -11,6 +12,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: 35px;
+    font-size: 30px;
     background: linear-gradient(90deg, #345, #789);
 }

@@ -1,11 +1,5 @@
 @font-face {
-    font-family: 'akwilo';
+    font-family: 'font';
     font-style: normal;
-    src: url('../fonts/akwilo.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'museo';
-    font-style: normal;
-    src: url('../fonts/MuseoSansDisplay-Light.woff') format('woff');
+    src: url('../fonts/font.woff') format(woff);
 }

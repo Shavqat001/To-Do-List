@@ -15,7 +15,7 @@
 }
 
 .form__field:focus + .form__label {
-    top: -25px;
+    top: -30px;
 }
 
 .form__label {
@@ -27,8 +27,9 @@
     transition: 350ms;
     background: #fff;
     border-radius: 15px 15px 0 0;
-    padding: 0 15px;
-    font-size: 27px;
+    padding: 3px 15px;
+    font-size: 25px;
+    font-family: sans-serif;
 }
 
 .form__button {

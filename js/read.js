@@ -15,7 +15,6 @@ function read() {
                 listEl = document.querySelector('.todo-list');
 
             liEl.classList.add('todo-list__item');
-            liEl.id = i;
             text.textContent = arrItems[i];
             if (arrClasses[i]) {
                 text.classList.add('done');
@@ -40,6 +39,7 @@ function read() {
                 liEl.remove();
                 saveData();
                 field.focus();
+                field.style.outlineColor = '#111';
             });
         }
     }

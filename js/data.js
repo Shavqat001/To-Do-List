@@ -13,12 +13,34 @@ formEl.addEventListener('submit', (evt) => {
     evt.preventDefault();
     if (formButton.textContent === 'add') {
         create();
+        showTitle();
     } else if (formButton.textContent === 'ok') {
         ok(currentEditingElement);
     }
 });
 
-window.addEventListener('load', read);
+window.addEventListener('load', () => {
+    read();
+    showTitle();
+});
+
+function showTitle() {
+    let title = document.querySelector('.title');
+    let items = document.querySelectorAll('.todo-list__item');
+
+    for (const item of items) {
+        item.addEventListener('mousemove', (e) => {
+            title.style.left = `${e.pageX + 15}px`;
+            title.style.top = `${e.pageY + 20}px`;
+            title.textContent = item.querySelector('.text').textContent
+            title.style.display = 'block';
+        });
+
+        item.addEventListener('mouseout', (e) => {
+            title.style.display = 'none';
+        });
+    }
+}
 
 function ok(el) {
     let text = field.value.trim();
@@ -37,4 +59,4 @@ function edit(el) {
     currentEditingElement = el;
 }
 
-export { edit }
+export { edit, showTitle }

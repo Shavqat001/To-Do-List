@@ -28,7 +28,7 @@
     background-color: rgba(0, 152, 79, 0.7);
 }
 
-.todo-list__item p {
+.text {
     user-select: none;
     font-size: 28px;
     max-width: 380px;
@@ -39,7 +39,7 @@
     align-items: center;
 }
 
-.todo-list__item p::-webkit-scrollbar {
+.text::-webkit-scrollbar {
     height: 0;
 }
 

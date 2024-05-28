@@ -15,3 +15,16 @@ body {
     font-size: 30px;
     background: linear-gradient(90deg, #345, #789);
 }
+
+.title {
+    width: 300px;
+    position: absolute;
+    background-color: #3457;
+    left: 10px;
+    top: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    word-break: break-word;
+    font-size: 20px;
+}

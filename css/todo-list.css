@@ -13,10 +13,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-}
-
-.todo-list__item::selection {
-    background-color: transparent;
+    user-select: none;
 }
 
 .todo-list__item:not(:last-child) {
@@ -38,6 +35,8 @@
     overflow: hidden;
     overflow-x: scroll;
     text-wrap: nowrap;
+    display: flex;
+    align-items: center;
 }
 
 .todo-list__item p::-webkit-scrollbar {
@@ -47,6 +46,17 @@
 .done {
     text-decoration: line-through;
     text-decoration-color: #fff9;
+}
+
+.done::before {
+    content: '';
+    width: 0px;
+    height: 25px;
+    padding-left: 25px;
+    background-color: #4CAF50;
+    clip-path: polygon(85% 12%, 100% 26%, 43% 92%, 3% 60%, 17% 44%, 42% 64%);
+    margin-right: 10px;
+    display: inline-block;
 }
 
 .todo-list__item div {

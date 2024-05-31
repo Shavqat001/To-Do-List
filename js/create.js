@@ -8,7 +8,7 @@ function create() {
         field.focus();
         return;
     }
-
+    let title = document.querySelector('.title');
     let listEl = getEl('.todo-list'),
 
         liEl = buildEl(listEl, 'li', '', 'todo-list__item'),
@@ -29,6 +29,7 @@ function create() {
         saveData();
         field.focus();
         field.style.outlineColor = '#111';
+        title.style.display = 'none';
     });
 
     field.style.outlineColor = '#111';

@@ -5,18 +5,13 @@ import { getEl } from "./functions.js";
 
 let formEl = getEl('.form'),
     field = getEl('.form__field'),
-    formButton = getEl('.form__button');
-
-let currentEditingElement = null;
+    formButton = getEl('.form__button'),
+    currentEditingElement = null;
 
 formEl.addEventListener('submit', (evt) => {
     evt.preventDefault();
-    if (formButton.textContent === 'add') {
-        create();
-        showTitle();
-    } else if (formButton.textContent === 'ok') {
-        ok(currentEditingElement);
-    }
+    formButton.textContent === 'add' ? create() : ok(currentEditingElement);
+    showTitle();
 });
 
 window.addEventListener('load', () => {
@@ -25,26 +20,22 @@ window.addEventListener('load', () => {
 });
 
 function showTitle() {
-    let title = document.querySelector('.title');
-    let items = document.querySelectorAll('.todo-list__item');
+    let title = document.querySelector('.title'),
+        items = document.querySelectorAll('.todo-list__item');
 
-    for (const item of items) {
+    items.forEach(item => {
         item.addEventListener('mousemove', (e) => {
             title.style.left = `${e.pageX + 15}px`;
             title.style.top = `${e.pageY + 20}px`;
-            title.textContent = item.querySelector('.text').textContent
+            title.textContent = item.querySelector('.text').textContent;
             title.style.display = 'block';
         });
-
-        item.addEventListener('mouseout', (e) => {
-            title.style.display = 'none';
-        });
-    }
+        item.addEventListener('mouseout', () => title.style.display = 'none');
+    });
 }
 
 function ok(el) {
-    let text = field.value.trim();
-    el.querySelector('p').textContent = text;
+    el.querySelector('p').textContent = field.value.trim();
     formButton.textContent = 'add';
     field.value = '';
     currentEditingElement = null;

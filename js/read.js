@@ -5,6 +5,7 @@ import { buildEl, getEl } from "./functions.js";
 function read() {
     let arrItems = JSON.parse(localStorage.getItem('items'));
     let arrClasses = JSON.parse(localStorage.getItem('classes'));
+    let title = document.querySelector('.title');
 
     if (arrItems && arrClasses) {
         let listEl = getEl('.todo-list');
@@ -34,6 +35,7 @@ function read() {
                 saveData();
                 field.focus();
                 field.style.outlineColor = '#111';
+                title.style.display = 'none';
             });
         }
     }

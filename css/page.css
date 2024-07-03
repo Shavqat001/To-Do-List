@@ -14,10 +14,11 @@ body {
     flex-direction: column;
     font-size: 30px;
     background: linear-gradient(90deg, #345, #789);
+    /* overflow-x: hidden; */
 }
 
 .title {
-    width: 300px;
+    display: none;
     position: absolute;
     background-color: #3457;
     left: 10px;

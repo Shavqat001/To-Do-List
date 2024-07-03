@@ -28,7 +28,7 @@ function showTitle() {
             title.style.left = `${e.pageX + 15}px`;
             title.style.top = `${e.pageY + 20}px`;
             title.textContent = item.querySelector('.text').textContent;
-            title.style.display = 'block';
+            title.style.display = 'inline';
         });
         item.addEventListener('mouseout', () => title.style.display = 'none');
     });
